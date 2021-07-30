@@ -27,7 +27,7 @@ From the above two figures, it can be seen that SSR is often used in the followi
 
 > In other words, if you are a mid-to-back-end application (such as antd pro, back-end management, etc.), please carefully consider whether to use SSR.
 
-## 什么是预渲染？
+## What is pre-rendering?
 
 服务端渲染，首先得有后端服务器（一般是 Node.js）才可以使用，如果我没有后端服务器，也想用在上面提到的两个场景，那么推荐使用**预渲染**。
 
