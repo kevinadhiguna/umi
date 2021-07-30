@@ -8,11 +8,11 @@ translateHelp: true
 
 > First of all, we first understand and whether it is in line with our business scenario, and then decide whether to use it.
 
-服务端渲染（Server-Side Rendering），是指由**服务侧**完成页面的 HTML 结构拼接的页面处理技术，发送到浏览器，然后为其绑定状态与事件，成为完全可交互页面的过程。
+Server-Side Rendering refers to the process of page processing technology where the HTML structure of the page is spliced ​​on the **server side**, sent to the browser, and then bound to the state and events to become a fully interactive page.
 
-这么讲可能比较学术，那通过两张图来更容易地说清楚。
+This may be more academic, but it is easier to make it clear through two pictures.
 
-第一张，单页应用（SPA）和服务端渲染过的（SSR）站点在**社交分享**时的区别：
+The first one is the difference between a single-page application (SPA) and a server-side rendered (SSR) site in **social sharing** :
 
 <img style="box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 6px 0px;" src="https://user-images.githubusercontent.com/13595509/68102160-5e66da00-ff0c-11e9-82e8-7c73cca1b20f.png" width="600" />
 
