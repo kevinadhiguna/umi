@@ -4,9 +4,9 @@ translateHelp: true
 
 # Server-side rendering（SSR）
 
-## 什么是服务端渲染？
+## What is server-side rendering?
 
-> 首先我们先了解下，以及是否符合我们的业务场景，再决定是否需要使用。
+> First of all, we first understand and whether it is in line with our business scenario, and then decide whether to use it.
 
 服务端渲染（Server-Side Rendering），是指由**服务侧**完成页面的 HTML 结构拼接的页面处理技术，发送到浏览器，然后为其绑定状态与事件，成为完全可交互页面的过程。
 
