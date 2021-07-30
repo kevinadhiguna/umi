@@ -16,16 +16,16 @@ The first one is the difference between a single-page application (SPA) and a se
 
 <img style="box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 6px 0px;" src="https://user-images.githubusercontent.com/13595509/68102160-5e66da00-ff0c-11e9-82e8-7c73cca1b20f.png" width="600" />
 
-第二张，**白屏时间**上 SSR 较少，因为当 HTML 文档返回时，已经有对应的内容。（见 Network）
+In the second picture, there is less SSR in the **blank screen time** because when the HTML document returns, there is already corresponding content. (See Network)
 
 <img style="box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 6px 0px;" src="https://user-images.githubusercontent.com/13595509/80308316-e74a3880-8800-11ea-9a20-2d9d153fe9d1.png" />
 
-综上两图可知，SSR 常用于以下两个场景：
+From the above two figures, it can be seen that SSR is often used in the following two scenarios:
 
-1. 有 **SEO 诉求**，用在搜索引擎检索以及社交分享，用在前台类应用。
-1. **首屏渲染**时长有要求，常用在移动端、弱网情况下。
+1. There are **SEO requirements**, used in search engine retrieval and social sharing, and used in front-end applications.
+2. There are requirements for the **first screen rendering** time, which is commonly used in mobile terminals and weak network conditions.
 
-> 也就是说，如果你是中后台应用（如 antd pro、管理后台等），请谨慎考虑是否使用 SSR。
+> In other words, if you are a mid-to-back-end application (such as antd pro, back-end management, etc.), please carefully consider whether to use SSR.
 
 ## 什么是预渲染？
 
