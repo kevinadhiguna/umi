@@ -29,11 +29,11 @@ From the above two figures, it can be seen that SSR is often used in the followi
 
 ## What is pre-rendering?
 
-服务端渲染，首先得有后端服务器（一般是 Node.js）才可以使用，如果我没有后端服务器，也想用在上面提到的两个场景，那么推荐使用**预渲染**。
+Server-side rendering requires a back-end server (usually Node.js) before it can be used. If I don't have a back-end server and want to use the two scenarios mentioned above, then it is recommended to use **pre-rendering**.
 
-预渲染与服务端渲染唯一的不同点在于**渲染时机**，服务端渲染的时机是在用户访问时执行渲染（即**实时渲染**，数据一般是最新的），预渲染的时机是在项目构建时，当用户访问时，数据不一定是最新的（如果数据没有实时性，则可以直接考虑预渲染）。
+The only difference between pre-rendering and server-side rendering is the **timing of rendering**. The timing of server-side rendering is to perform rendering when the user visits (that is, **real-time rendering**, the data is generally the latest). The timing of pre-rendering is when the project is built, when the user When accessing, the data may not be the latest (if the data is not real-time, you can directly consider pre-rendering).
 
-预渲染（Pre Render）在构建时执行渲染，将渲染后的 HTML 片段生成静态 HTML 文件。无需使用 web 服务器实时动态编译 HTML，适用于**静态站点生成**。
+Pre Render performs rendering during construction and generates static HTML files from rendered HTML fragments. There is no need to use a web server to dynamically compile HTML in real time, which is suitable for **static site generation**.
 
 ## Umi 服务端渲染特性
 
