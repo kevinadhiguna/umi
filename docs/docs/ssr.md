@@ -171,9 +171,9 @@ export default Home;
 - `route`： Current routing object
 - `history`: History object
 
-### 扩展 ctx 参数
+### Extended ctx parameters
 
-为了结合数据流框架，我们提供了 `modifyGetInitialPropsCtx` 方法，由插件或应用来扩展 `ctx` 参数，以 `dva` 为例：
+In order to combine data stream framework, we provide a `modifyGetInitialPropsCtx` method to extend the plug-in or application `ctx` parameters to `dva`. Here is an example:
 
 ```ts
 // plugin-dva/runtime.ts
@@ -184,7 +184,7 @@ export const ssr = {
 };
 ```
 
-然后在页面中，可以通过获取到 `store`：
+Then on the page, you can get `store`:
 
 ```tsx
 // pages/index.tsx
@@ -198,7 +198,7 @@ Home.getInitialProps = async (ctx) => {
 export default Home;
 ```
 
-同时也可以在自身应用中进行扩展：
+At the same time, it can also be extended in its own applications:
 
 ```js
 // app.(ts|js)
@@ -210,18 +210,18 @@ export const ssr = {
 };
 ```
 
-同时可以使用 `getInitialPropsCtx` 将服务端参数扩展到 `ctx` 中，例如：
+At the same time it can be used `getInitialPropsCtx` to extend the service parameters to the terminal `ctx`, for example:
 
 ```js
 app.use(async (req, res) => {
-  // 或者从 CDN 上下载到 server 端
+  // Or download from CDN to server
   // const serverPath = await downloadServerBundle('http://cdn.com/bar/umi.server.js');
   const render = require('./dist/umi.server');
   res.setHeader('Content-Type', 'text/html');
 
   const context = {};
   const { html, error, rootContainer } = await render({
-    // 有需要可带上 query
+    // Bring query if necessary
     path: req.url,
     context,
     getInitialPropsCtx: {
@@ -231,7 +231,7 @@ app.use(async (req, res) => {
 });
 ```
 
-在使用的时候，就有 `req` 对象，不过需要注意的是，只在服务端执行时才有此参数：
+When in use, there is `req` object, but it needs to be noted that only when the server performs this parameter:
 
 ```js
 Page.getInitialProps = async (ctx) => {
@@ -242,14 +242,14 @@ Page.getInitialProps = async (ctx) => {
 };
 ```
 
-则在执行 `getInitialProps` 方法时，除了以上两个固定参数外，还会获取到 `title` 和 `store` 参数。
+Then the execution `getInitialProps` time of the method, in addition to the above two fixed parameters, but also acquired `title` and `store` parameters.
 
-关于 `getInitialProps` 执行逻辑和时机，这里需要注意：
+On the `getInitialProps` implementation of logic and timing, please note:
 
-- 开启 ssr，且执行成功
-  - 未开启 `forceInitial`，首屏不触发 `getInitialProps`，切换页面时会执行请求，和客户端渲染逻辑保持一致。
-  - 开启 `forceInitial`，无论是首屏还是页面切换，都会触发 `getInitialProps`，目的是始终以客户端请求的数据为准。（有用在静态页面站点的实时数据请求上）
-- 未开启 ssr 时，只要页面组件中有 `getInitialProps` 静态方法，则会执行该方法。
+- Open ssr, and the execution is successful:
+  - If it is not turned on `forceInitial`, the first screen will not be triggered `getInitialProps`, and the request will be executed when the page is switched, which is consistent with the rendering logic of the client.
+  - When `forceInitial` is turned on , it will be triggered whether it is the first screen or the page switching `getInitialProps`. The purpose is to always follow the data requested by the client. (Useful for real-time data requests of static page sites).
+- When ssr not turned on, as long as the page components in `getInitialProps` a static method, the method is performed.
 
 ## 部署
 
