@@ -80,9 +80,9 @@ export default {
 };
 ```
 
-## 数据预获取
+## Data pre-acquisition
 
-服务端渲染的数据获取方式与 SPA（单页应用）有所不同，为了让客户端和服务端都能获取到同一份数据，我们提供了 页面级数据 预获取。
+The data acquisition method for server rendering is different from SPA (Single Page Application). In order to allow both the client and the server to obtain the same data, we provide page-level data pre-acquisition.
 
 <!-- ### 应用级数据获取
 
@@ -116,11 +116,11 @@ export default (props) => {
 }
 ``` -->
 
-### 页面级数据获取
+### Page-level data acquisition
 
-### 使用
+### How to Use
 
-每个页面可能有单独的数据预获取逻辑，这里我们会获取页面组件上的 `getInitialProps` 静态方法，执行后将结果注入到该页面组件的 `props` 中，例如：
+Each page may have separate data pre-fetch logic, we obtain where on the page assembly `getInitialProps` static method, the execution result to the page after injection assembly `props`, such as:
 
 ```tsx
 // pages/index.tsx
@@ -143,7 +143,7 @@ Home.getInitialProps = (async (ctx) => {
   })
 }) as IGetInitialProps;
 
-/** 同时也可以使用 class 组件
+/** You can also use class components at the same time
 class Home extends React.Component {
   static getInitialProps = (async (ctx) => {
     return Promise.resolve({
@@ -164,12 +164,12 @@ class Home extends React.Component {
 export default Home;
 ```
 
-`getInitialProps` 中有几个固定参数：
+`getInitialProps` has several fixed parameters：
 
-- `match`： 与客户端页面 props 中的 `match` 保持一致，有当前路由的相关数据。
-- `isServer`：是否为服务端在执行该方法。
-- `route`：当前路由对象
-- `history`：history 对象
+- `match`： Client page props in `match` keeping with the relevant data for the current route.
+- `isServer`: Whether the method is being executed by the server.
+- `route`： Current routing object
+- `history`: History object
 
 ### 扩展 ctx 参数
 
