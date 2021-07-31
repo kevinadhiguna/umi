@@ -61,20 +61,20 @@ export default {
 };
 ```
 
-## 开发
+## Development
 
-执行 `umi dev`，访问页面，即是服务端渲染后的。
+Execute `umi dev` and visit the page which is rendered by the server.
 
 <img style="box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 6px 0px;" src="https://user-images.githubusercontent.com/13595509/80309380-4743dd80-8807-11ea-9def-7bb43522dce3.png" width="600" />
 
-> [如何判断当前页面是 SSR 还是 CSR？](#如何判断当前页面是-ssr-还是-csr？)
+> [How to judge whether the current page is SSR or CSR?](#how-to-judge-whether-the-current-page-is-ssr-or-csr)
 
-如果与后端框架在开发模式下一起使用时，可通过配置来关闭 `umi dev` 下的服务端渲染行为：
+If used with a rear frame in a development mode, it can be configured to shut down `umi dev` the server under the rendering behavior:
 
 ```js
 export default {
   ssr: {
-    // 默认为 true
+    // default true
     devServerRender: false,
   },
 };
@@ -660,6 +660,6 @@ export default () => {
 + <div dangerouslySetInnerHTML={{ __html: '<p>Hello</p>' }} />
 ```
 
-### 如何判断当前页面是 SSR 还是 CSR？
+### How to judge whether the current page is SSR or CSR?
 
-查看网页源代码，如果 `<div id="root">` DOM 里的元素不为空，则是 SSR，否则为 CSR。
+Check the source code of the webpage, if `<div id="root">` the element in the DOM is not empty, it is SSR, otherwise it is CSR.
