@@ -51,9 +51,9 @@ Umi 3 combines its own business scenarios to do a lot of optimization and develo
 - **Compatible with client dynamic loading** : There will be some problems when using SSR and dynamicImport (dynamic loading) at the same time in Umi 2, and they can be used at the same time in Umi 3.
 - **Plug-in SSR function**: The built-in SSR function of Umi 3 is basically sufficient. If you don't meet your needs or want to customize the rendering method, you can customize it through the provided API.
 
-## 启用服务端渲染
+## Enable server-side rendering
 
-默认情况下，服务端渲染功能是关闭的，你需要在使用之前通过配置开启：
+By default, the server-side rendering function is disabled, you need to enable it through configuration before using:
 
 ```js
 export default {
